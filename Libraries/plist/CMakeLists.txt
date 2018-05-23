@@ -78,11 +78,13 @@ install(TARGETS plist DESTINATION usr/lib)
 
 add_executable(plutil_xcbuild Tools/plutil_xcbuild.cpp)
 target_link_libraries(plutil_xcbuild PRIVATE plist process util_xcbuild)
+set_target_properties(plutil_xcbuild PROPERTIES OUTPUT_NAME plutil)
 install(TARGETS plutil_xcbuild DESTINATION usr/bin)
 
-add_executable(PlistBuddy Tools/PlistBuddy.cpp)
-target_link_libraries(PlistBuddy PRIVATE plist util_xcbuild)
-install(TARGETS PlistBuddy DESTINATION usr/bin)
+add_executable(PlistBuddy_xcbuild Tools/PlistBuddy.cpp)
+target_link_libraries(PlistBuddy_xcbuild PRIVATE plist util_xcbuild)
+set_target_properties(PlistBuddy_xcbuild PROPERTIES OUTPUT_NAME PlistBuddy)
+install(TARGETS PlistBuddy_xcbuild DESTINATION usr/bin)
 
 if ("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
   # TODO
@@ -96,8 +98,8 @@ else ()
       target_compile_definitions(linenoise PRIVATE _GNU_SOURCE)
     endif ()
 
-    target_link_libraries(PlistBuddy PRIVATE linenoise)
-    target_compile_definitions(PlistBuddy PRIVATE HAVE_LINENOISE)
+    target_link_libraries(PlistBuddy_xcbuild PRIVATE linenoise)
+    target_compile_definitions(PlistBuddy_xcbuild PRIVATE HAVE_LINENOISE)
   endif ()
 endif ()
 
