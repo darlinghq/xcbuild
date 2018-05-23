@@ -19,7 +19,7 @@ add_library(process
             Sources/MemoryUser.cpp
             )
 
-target_link_libraries(process PUBLIC ext util)
+target_link_libraries(process PUBLIC ext util_xcbuild)
 target_include_directories(process PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Headers")
 install(TARGETS process DESTINATION usr/lib)
 

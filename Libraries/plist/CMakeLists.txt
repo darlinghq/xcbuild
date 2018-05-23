@@ -56,7 +56,7 @@ add_library(plist
             Sources/Format/Any.cpp
             )
 
-target_link_libraries(plist PRIVATE util)
+target_link_libraries(plist PRIVATE util_xcbuild)
 
 if ("${CMAKE_SYSTEM_NAME}" MATCHES "Windows")
   if ("${CMAKE_CXX_PLATFORM_ID}" STREQUAL "MinGW")
@@ -76,12 +76,12 @@ target_include_directories(plist PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Headers")
 target_include_directories(plist PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/PrivateHeaders")
 install(TARGETS plist DESTINATION usr/lib)
 
-add_executable(plutil Tools/plutil.cpp)
-target_link_libraries(plutil PRIVATE plist process util)
-install(TARGETS plutil DESTINATION usr/bin)
+add_executable(plutil_xcbuild Tools/plutil_xcbuild.cpp)
+target_link_libraries(plutil_xcbuild PRIVATE plist process util_xcbuild)
+install(TARGETS plutil_xcbuild DESTINATION usr/bin)
 
 add_executable(PlistBuddy Tools/PlistBuddy.cpp)
-target_link_libraries(PlistBuddy PRIVATE plist util)
+target_link_libraries(PlistBuddy PRIVATE plist util_xcbuild)
 install(TARGETS PlistBuddy DESTINATION usr/bin)
 
 if ("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")

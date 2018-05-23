@@ -66,12 +66,12 @@ add_library(pbxbuild
             Sources/Build/DependencyResolver.cpp
             )
 
-target_link_libraries(pbxbuild PUBLIC xcsdk xcworkspace xcscheme pbxproj pbxspec pbxsetting dependency process util plist ext)
+target_link_libraries(pbxbuild PUBLIC xcsdk xcworkspace xcscheme pbxproj pbxspec pbxsetting dependency process util_xcbuild plist ext)
 target_include_directories(pbxbuild PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Headers")
 install(TARGETS pbxbuild DESTINATION usr/lib)
 
 add_executable(dump_hmap Tools/dump_hmap.cpp)
-target_link_libraries(dump_hmap pbxbuild util plist)
+target_link_libraries(dump_hmap pbxbuild util_xcbuild plist)
 
 if (BUILD_TESTING)
   ADD_UNIT_GTEST(pbxbuild DirectedGraph Tests/test_DirectedGraph.cpp)

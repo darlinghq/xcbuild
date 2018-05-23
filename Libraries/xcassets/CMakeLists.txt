@@ -64,7 +64,7 @@ add_library(xcassets
             Sources/Asset/TextureSet.cpp
             )
 
-target_link_libraries(xcassets PUBLIC util plist ext)
+target_link_libraries(xcassets PUBLIC util_xcbuild plist ext)
 target_include_directories(xcassets PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Headers")
 install(TARGETS xcassets DESTINATION usr/lib)
 

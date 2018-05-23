@@ -13,7 +13,7 @@ add_library(bom
             Sources/bom_tree.c
             )
 
-target_link_libraries(bom PUBLIC util)
+target_link_libraries(bom PUBLIC util_xcbuild)
 if ("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
   if ("${CMAKE_CXX_PLATFORM_ID}" STREQUAL "MinGW")
     target_link_libraries(bom PRIVATE wsock32 ws2_32)
@@ -25,7 +25,7 @@ target_include_directories(bom PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Headers")
 install(TARGETS bom DESTINATION usr/lib)
 
 add_executable(lsbom Tools/lsbom.cpp)
-target_link_libraries(lsbom PRIVATE util bom)
+target_link_libraries(lsbom PRIVATE util_xcbuild bom)
 if ("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
   if ("${CMAKE_CXX_PLATFORM_ID}" STREQUAL "MinGW")
     target_link_libraries(lsbom PRIVATE wsock32 ws2_32)
@@ -36,7 +36,7 @@ endif ()
 install(TARGETS lsbom DESTINATION usr/bin)
 
 add_executable(dump_bom Tools/dump_bom.c)
-target_link_libraries(dump_bom PRIVATE bom util)
+target_link_libraries(dump_bom PRIVATE bom util_xcbuild)
 if ("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
   if ("${CMAKE_CXX_PLATFORM_ID}" STREQUAL "MinGW")
     target_link_libraries(dump_bom PRIVATE wsock32 ws2_32)

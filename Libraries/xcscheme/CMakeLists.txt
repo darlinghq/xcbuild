@@ -28,6 +28,6 @@ add_library(xcscheme
             Sources/XC/TestableReference.cpp
             )
 
-target_link_libraries(xcscheme PUBLIC pbxsetting util plist)
+target_link_libraries(xcscheme PUBLIC pbxsetting util_xcbuild plist)
 target_include_directories(xcscheme PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Headers")
 install(TARGETS xcscheme DESTINATION usr/lib)

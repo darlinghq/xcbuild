@@ -14,10 +14,10 @@ add_library(xcworkspace
             Sources/XC/GroupItem.cpp
             )
 
-target_link_libraries(xcworkspace PUBLIC pbxsetting process util plist)
+target_link_libraries(xcworkspace PUBLIC pbxsetting process util_xcbuild plist)
 target_include_directories(xcworkspace PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Headers")
 install(TARGETS xcworkspace DESTINATION usr/lib)
 
 add_executable(dump_xcworkspace Tools/dump_xcworkspace.cpp)
-target_link_libraries(dump_xcworkspace xcworkspace xcscheme pbxproj util plist)
+target_link_libraries(dump_xcworkspace xcworkspace xcscheme pbxproj util_xcbuild plist)
 
