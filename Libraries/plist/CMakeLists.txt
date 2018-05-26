@@ -76,7 +76,7 @@ target_include_directories(plist PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Headers")
 target_include_directories(plist PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/PrivateHeaders")
 install(TARGETS plist DESTINATION usr/lib)
 
-add_executable(plutil_xcbuild Tools/plutil_xcbuild.cpp)
+add_executable(plutil_xcbuild Tools/plutil.cpp)
 target_link_libraries(plutil_xcbuild PRIVATE plist process util_xcbuild)
 set_target_properties(plutil_xcbuild PROPERTIES OUTPUT_NAME plutil)
 install(TARGETS plutil_xcbuild DESTINATION usr/bin)
