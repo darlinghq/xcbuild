@@ -14,12 +14,12 @@ cmake_policy(SET CMP0054 NEW)
 
 set(BUILD_SHARED_LIBS True CACHE BOOL "Build shared libraries." FORCE)
 
-if ("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux")
-  set(CMAKE_INSTALL_RPATH "$ORIGIN")
-endif ()
+set(CMAKE_INSTALL_RPATH "$ORIGIN")
+SET(CMAKE_SKIP_BUILD_RPATH  FALSE)
+SET(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE) 
 
 # Output into root build directory.
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/src/external/xcbuild")
+#set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/src/external/xcbuild")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/src/external/xcbuild")
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99")
@@ -33,7 +33,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti -fno-exceptions")
 add_compile_options(-Wall)
 
 # Enable unit testing.
-include(CTest)
+#include(CTest)
+set(BUILD_TESTING False)
 
 if (BUILD_TESTING)
   add_subdirectory(ThirdParty/googletest/googletest)
