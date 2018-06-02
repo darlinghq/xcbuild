@@ -7,6 +7,8 @@
  of patent rights can be found in the PATENTS file in the same directory.
  */
 
+#include <stdlib.h>
+
 #include <pbxspec/Manager.h>
 #include <pbxspec/Context.h>
 #include <plist/Array.h>
@@ -39,6 +41,12 @@ typename T::vector Manager::
 findSpecifications(std::vector<std::string> const &domains, SpecificationType type) const
 {
     typename T::vector specifications;
+
+    printf("Specification domains: ");
+    for (std::string const &domain : domains) {
+      printf("%s ", domain.c_str());
+    }
+    printf("\n");
 
     for (std::string const &domain : domains) {
         if (domain == AnyDomain()) {
@@ -513,6 +521,14 @@ DefaultDomains(std::string const &developerRoot)
     std::string plugins    = root + "/Contents/SharedSupport/Developer/Library/Xcode/Plug-ins";
     std::string embedded   = developerRoot + "/../PlugIns/IDEiOSSupportCore.ideplugin/Contents/Resources";
 
+    char *darlingC = getenv("RUNTIME_SPEC_PATH");
+    std::string darling = "";
+    if (darlingC == NULL) {
+        fprintf(stderr, "RUNTIME_SPEC_PATH not set, using /\n");
+    } else {
+        darling = std::string(darlingC);
+    }
+
     return {
         { "default", developerRoot + "/Library/Xcode/Specifications" },
         { "default", frameworks + "/" + "DevToolsCore.framework" },
@@ -524,6 +540,12 @@ DefaultDomains(std::string const &developerRoot)
         { "default", plugins + "/" + "SceneKit.xcplugin" },
         { "default", plugins + "/" + "SpriteKit.xcplugin" },
         { "default", plugins + "/" + "XCLanguageSupport.xcplugin" },
+        { "default", darling + "/" + "FileType" },
+        { "default", darling + "/" + "Tool" },
+        { "default", darling + "/" + "BuildPhase" },
+        { "default", darling + "/" + "BuildSystem" },
+        { "default", darling + "/" + "Compiler" },
+        { "default", darling + "/" + "Linker" },
         { "embedded-shared", embedded + "/" + "Embedded-Shared.xcspec" },
         { "embedded", embedded + "/" + "Embedded-Device.xcspec" },
         { "embedded-simulator", embedded + "/" + "Embedded-Simulator.xcspec" },
@@ -581,9 +603,17 @@ PlatformDependentDomains(std::string const &developerRoot)
 std::vector<std::string> Manager::
 DeveloperBuildRules(std::string const &developerRoot)
 {
+    char *darlingC = getenv("RUNTIME_SPEC_PATH");
+    std::string darling = "";
+    if (darlingC == NULL) {
+        fprintf(stderr, "RUNTIME_SPEC_PATH not set, using /\n");
+    } else {
+        darling = std::string(darlingC);
+    }
+
     return {
         developerRoot + "/../PlugIns/Xcode3Core.ideplugin/Contents/Frameworks/DevToolsCore.framework/Resources/BuiltInBuildRules.plist",
         developerRoot + "/Library/Xcode/Specifications/BuiltInBuildRules.plist",
+        darling + "/BuildRules/BuiltInBuildRules.plist",
     };
 }
-
