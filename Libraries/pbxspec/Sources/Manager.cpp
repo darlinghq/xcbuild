@@ -42,12 +42,6 @@ findSpecifications(std::vector<std::string> const &domains, SpecificationType ty
 {
     typename T::vector specifications;
 
-    printf("Specification domains: ");
-    for (std::string const &domain : domains) {
-      printf("%s ", domain.c_str());
-    }
-    printf("\n");
-
     for (std::string const &domain : domains) {
         if (domain == AnyDomain()) {
             for (auto const &entry : _specifications) {
