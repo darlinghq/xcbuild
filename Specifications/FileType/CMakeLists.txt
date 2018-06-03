@@ -7,7 +7,7 @@
 # of patent rights can be found in the PATENTS file in the same directory.
 #
 
-install(FILES
+#install(FILES
         archive.ar.xcspec
         archive.asdictionary.xcspec
         archive.binhex.xcspec

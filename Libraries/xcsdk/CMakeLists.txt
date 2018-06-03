@@ -20,17 +20,17 @@ add_library(xcsdk
 
 target_link_libraries(xcsdk PUBLIC pbxsetting process util_xcbuild plist)
 target_include_directories(xcsdk PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Headers")
-install(TARGETS xcsdk DESTINATION usr/lib)
+#install(TARGETS xcsdk DESTINATION usr/lib)
 
 add_executable(xcrun_xcodebuild Tools/xcrun.cpp)
 target_link_libraries(xcrun_xcodebuild xcsdk util_xcbuild)
 set_target_properties(xcrun_xcodebuild PROPERTIES OUTPUT_NAME xcrun)
-install(TARGETS xcrun_xcodebuild DESTINATION usr/bin)
+#install(TARGETS xcrun_xcodebuild DESTINATION usr/bin)
 
 add_executable(xcode-select_xcbuild Tools/xcode-select.cpp)
 target_link_libraries(xcode-select_xcbuild xcsdk util_xcbuild)
 set_target_properties(xcode-select_xcbuild PROPERTIES OUTPUT_NAME xcode-select)
-install(TARGETS xcode-select_xcbuild DESTINATION usr/bin)
+#install(TARGETS xcode-select_xcbuild DESTINATION usr/bin)
 
 if (BUILD_TESTING)
   ADD_UNIT_GTEST(xcsdk PlatformVersion Tests/test_PlatformVersion.cpp)

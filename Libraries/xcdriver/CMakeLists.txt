@@ -33,11 +33,11 @@ target_include_directories(xcdriver PRIVATE "${CMAKE_CURRENT_BINARY_DIR}")
 
 target_link_libraries(xcdriver PUBLIC xcexecution xcformatter pbxbuild xcworkspace xcsdk pbxsetting process util_xcbuild plist builtin)
 target_include_directories(xcdriver PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Headers")
-install(TARGETS xcdriver DESTINATION usr/lib)
+#install(TARGETS xcdriver DESTINATION usr/lib)
 
 add_executable(xcbuild Tools/xcbuild.cpp)
 target_link_libraries(xcbuild xcdriver)
-install(TARGETS xcbuild DESTINATION usr/bin)
+#install(TARGETS xcbuild DESTINATION usr/bin)
 
 set(ALIAS_PATH "$<TARGET_FILE_DIR:xcbuild>/xcodebuild${CMAKE_EXECUTABLE_SUFFIX}")
 if ("${CMAKE_SYSTEM_NAME}" STREQUAL "Windows")
@@ -49,7 +49,7 @@ else ()
                      COMMAND "${CMAKE_COMMAND}" -E create_symlink "$<TARGET_FILE_NAME:xcbuild>" "${ALIAS_PATH}"
                      DEPENDS "$<TARGET_FILE:xcbuild>")
 endif ()
-install(FILES "${ALIAS_PATH}" DESTINATION usr/bin)
+#install(FILES "${ALIAS_PATH}" DESTINATION usr/bin)
 
 if (BUILD_TESTING)
   ADD_UNIT_GTEST(xcdriver Options Tests/test_Options.cpp)

@@ -38,7 +38,7 @@ else ()
   target_compile_definitions(graphics PRIVATE "${PNG_DEFINITIONS}")
 endif ()
 
-install(TARGETS graphics DESTINATION usr/lib)
+#install(TARGETS graphics DESTINATION usr/lib)
 
 if (BUILD_TESTING)
   ADD_UNIT_GTEST(graphics PixelFormat Tests/test_PixelFormat.cpp)

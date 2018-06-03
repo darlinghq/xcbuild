@@ -49,4 +49,4 @@ if (BUILD_TESTING)
 endif ()
 
 add_subdirectory(Libraries)
-add_subdirectory(Specifications)
+#add_subdirectory(Specifications)

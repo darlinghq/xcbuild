@@ -529,6 +529,8 @@ DefaultDomains(std::string const &developerRoot)
         darling = std::string(darlingC);
     }
 
+    printf("%s, %s\n", developerRoot.c_str(), (darling + "/" + "BuildSystem").c_str());
+
     return {
         { "default", developerRoot + "/Library/Xcode/Specifications" },
         { "default", frameworks + "/" + "DevToolsCore.framework" },

@@ -21,7 +21,7 @@ add_library(process
 
 target_link_libraries(process PUBLIC ext util_xcbuild)
 target_include_directories(process PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Headers")
-install(TARGETS process DESTINATION usr/lib)
+#install(TARGETS process DESTINATION usr/lib)
 
 find_package(Threads REQUIRED)
 target_link_libraries(process PRIVATE ${CMAKE_THREAD_LIBS_INIT})

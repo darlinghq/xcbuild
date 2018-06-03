@@ -17,11 +17,11 @@ add_library(dependency
 
 target_link_libraries(dependency PUBLIC util_xcbuild ext)
 target_include_directories(dependency PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Headers")
-install(TARGETS dependency DESTINATION usr/lib)
+#install(TARGETS dependency DESTINATION usr/lib)
 
 add_executable(dependency-info-tool Tools/dependency-info-tool.cpp)
 target_link_libraries(dependency-info-tool dependency process util_xcbuild)
-install(TARGETS dependency-info-tool DESTINATION usr/bin)
+#install(TARGETS dependency-info-tool DESTINATION usr/bin)
 
 add_executable(dump_dependency Tools/dump_dependency.cpp)
 target_link_libraries(dump_dependency dependency process util_xcbuild)

@@ -28,7 +28,7 @@ add_library(util_xcbuild
 
 target_link_libraries(util_xcbuild PUBLIC ext)
 target_include_directories(util_xcbuild PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Headers")
-install(TARGETS util_xcbuild DESTINATION usr/lib)
+#install(TARGETS util_xcbuild DESTINATION usr/lib)
 
 if (BUILD_TESTING)
   ADD_UNIT_GTEST(util_xcbuild MemoryFilesystem Tests/test_MemoryFilesystem.cpp)

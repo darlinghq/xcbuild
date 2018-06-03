@@ -7,6 +7,6 @@
 # of patent rights can be found in the PATENTS file in the same directory.
 #
 
-install(FILES
+#install(FILES
         BuiltInBuildRules.plist
         DESTINATION Library/Xcode/Specifications)

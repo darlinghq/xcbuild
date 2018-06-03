@@ -7,7 +7,7 @@
 # of patent rights can be found in the PATENTS file in the same directory.
 #
 
-install(FILES
+#install(FILES
         com.apple.buildphase.applescript.xcspec
         com.apple.buildphase.copy-files.xcspec
         com.apple.buildphase.frameworks.xcspec

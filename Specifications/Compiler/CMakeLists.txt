@@ -7,7 +7,7 @@
 # of patent rights can be found in the PATENTS file in the same directory.
 #
 
-install(FILES
+#install(FILES
         com.apple.build-tasks.copy-tiff-file.xcspec
         com.apple.build-tasks.copy-plist-file.xcspec
         com.apple.build-tasks.copy-png-file.xcspec

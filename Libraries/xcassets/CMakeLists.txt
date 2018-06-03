@@ -66,7 +66,7 @@ add_library(xcassets
 
 target_link_libraries(xcassets PUBLIC util_xcbuild plist ext)
 target_include_directories(xcassets PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Headers")
-install(TARGETS xcassets DESTINATION usr/lib)
+#install(TARGETS xcassets DESTINATION usr/lib)
 
 add_executable(dump_xcassets Tools/dump_xcassets.cpp)
 target_link_libraries(dump_xcassets PRIVATE xcassets)

@@ -7,7 +7,7 @@
 # of patent rights can be found in the PATENTS file in the same directory.
 #
 
-install(FILES
+#install(FILES
         com.apple.pbx.linkers.ld.xcspec
         com.apple.pbx.linkers.libtool.xcspec
         com.apple.xcode.linkers.lipo.xcspec

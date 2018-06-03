@@ -7,7 +7,7 @@
 # of patent rights can be found in the PATENTS file in the same directory.
 #
 
-install(FILES
+#install(FILES
         com.apple.build-tools.nmedit.xcspec
         com.apple.build-tools.strip.xcspec
         com.apple.build-tools.swift-stdlib-tool.xcspec

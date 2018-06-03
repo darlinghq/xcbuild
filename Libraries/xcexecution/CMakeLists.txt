@@ -17,7 +17,7 @@ add_library(xcexecution
 
 target_link_libraries(xcexecution PUBLIC xcformatter pbxbuild xcscheme xcworkspace pbxproj pbxsetting process util_xcbuild dependency ninja builtin)
 target_include_directories(xcexecution PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/Headers")
-install(TARGETS xcexecution DESTINATION usr/lib)
+#install(TARGETS xcexecution DESTINATION usr/lib)
 
 if (BUILD_TESTING)
   ADD_UNIT_GTEST(xcexecution SimpleExecutor Tests/test_SimpleExecutor.cpp)
