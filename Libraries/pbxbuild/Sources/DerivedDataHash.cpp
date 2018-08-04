@@ -31,11 +31,14 @@ derivedDataHash() const
 std::vector<pbxsetting::Setting> DerivedDataHash::
 overrideSettings() const
 {
-    std::string hash = derivedDataHash();
-
-    return {
+    //std::string hash = derivedDataHash();
+    /*return {
         pbxsetting::Setting::Parse("SYMROOT", "$(DERIVED_DATA_DIR)/" + hash + "/Build/Products"),
         pbxsetting::Setting::Parse("OBJROOT", "$(DERIVED_DATA_DIR)/" + hash + "/Build/Intermediates"),
+    };*/
+    return {
+        pbxsetting::Setting::Parse("SYMROOT", "$(DERIVED_DATA_DIR)/Build/Products"),
+        pbxsetting::Setting::Parse("OBJROOT", "$(DERIVED_DATA_DIR)/Build/Intermediates"),
     };
 }
 

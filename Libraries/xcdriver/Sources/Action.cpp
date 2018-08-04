@@ -40,6 +40,9 @@ CreateOverrideLevels(process::Context const *processContext, Filesystem const *f
     if (options.arch()) {
         settings.push_back(pbxsetting::Setting::Create("ARCHS", *options.arch()));
     }
+    if (options.derivedDataPath()) {
+        settings.push_back(pbxsetting::Setting::Create("DERIVED_DATA_DIR", *options.derivedDataPath()));
+    }
     levels.push_back(pbxsetting::Level(settings));
 
     levels.push_back(options.settings());

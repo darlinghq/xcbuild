@@ -101,9 +101,9 @@ VerifySupportedOptions(Options const &options)
         fprintf(stderr, "warning: build mode option not implemented\n");
     }
 
-    if (options.derivedDataPath()) {
+    /*if (options.derivedDataPath()) {
         fprintf(stderr, "warning: custom derived data path not implemented\n");
-    }
+    }*/
 
     if (options.resultBundlePath()) {
         fprintf(stderr, "warning: result bundle path not implemented\n");
