@@ -366,7 +366,14 @@ Create(Build::Environment const &buildEnvironment, Build::Context const &buildCo
          * All settings added; determine target SDK.
          */
         std::string sdkroot = determinationEnvironment.resolve("SDKROOT");
+
+        if (sdkroot == "") {
+            sdkroot = "macosx.internal";
+        }
+
         sdk = buildEnvironment.sdkManager()->findTarget(sdkroot);
+        printf("sdkroot: %s\n", sdkroot.c_str());
+
         if (sdk == nullptr) {
             fprintf(stderr, "error: unable to find sdkroot %s\n", sdkroot.c_str());
             return ext::nullopt;
