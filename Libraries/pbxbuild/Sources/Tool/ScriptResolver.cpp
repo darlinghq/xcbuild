@@ -119,7 +119,7 @@ resolve(
 
     Tool::Invocation invocation;
     invocation.executable() = Tool::Invocation::Executable::External("/bin/sh");
-    invocation.arguments() = { "-c", Escape::Shell(scriptFilePath) };
+    invocation.arguments() = { "-c", "sed -ie 's/\\/bin\\/ln/bsdln/g' " + Escape::Shell(scriptFilePath) + "; " + Escape::Shell(scriptFilePath) };
     invocation.environment() = environmentVariables;
     invocation.workingDirectory() = toolContext->workingDirectory();
     invocation.phonyInputs() = inputFiles; /* User-specified, may not exist. */
