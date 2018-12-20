@@ -26,6 +26,7 @@ private:
 
 public:
     NativeTarget();
+    virtual ~NativeTarget();
 
 public:
     inline std::string const &productType() const

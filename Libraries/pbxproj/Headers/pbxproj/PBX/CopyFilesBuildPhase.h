@@ -42,6 +42,7 @@ private:
 
 public:
     CopyFilesBuildPhase();
+    virtual ~CopyFilesBuildPhase();
 
 public:
     inline pbxsetting::Value const &dstPath() const

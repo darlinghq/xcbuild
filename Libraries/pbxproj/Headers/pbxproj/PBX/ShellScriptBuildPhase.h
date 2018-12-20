@@ -29,6 +29,7 @@ private:
 
 public:
     ShellScriptBuildPhase();
+    virtual ~ShellScriptBuildPhase();
 
 public:
     inline std::string const &name() const

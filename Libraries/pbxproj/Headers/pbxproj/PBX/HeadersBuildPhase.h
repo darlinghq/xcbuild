@@ -20,6 +20,7 @@ public:
 
 public:
     HeadersBuildPhase();
+    virtual ~HeadersBuildPhase();
 
 public:
     static inline char const *Isa()

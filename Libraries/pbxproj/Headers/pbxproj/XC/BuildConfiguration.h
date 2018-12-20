@@ -27,7 +27,7 @@ private:
 
 public:
     BuildConfiguration();
-    ~BuildConfiguration();
+    virtual ~BuildConfiguration();
 
 public:
     inline PBX::FileReference::shared_ptr const &baseConfigurationReference() const

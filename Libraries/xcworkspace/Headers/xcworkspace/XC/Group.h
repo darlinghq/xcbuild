@@ -25,6 +25,7 @@ private:
 
 public:
     Group();
+    virtual ~Group();
 
 public:
     inline std::string const &name() const

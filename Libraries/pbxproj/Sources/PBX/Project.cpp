@@ -34,6 +34,11 @@ Project() :
 {
 }
 
+Project::
+~Project()
+{
+}
+
 pbxsetting::Level Project::
 settings(void) const
 {

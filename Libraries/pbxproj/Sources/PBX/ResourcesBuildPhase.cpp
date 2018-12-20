@@ -16,3 +16,8 @@ ResourcesBuildPhase() :
     BuildPhase(Isa(), Type::Resources)
 {
 }
+
+ResourcesBuildPhase::
+~ResourcesBuildPhase()
+{
+}

@@ -24,6 +24,7 @@ private:
 
 public:
     VersionGroup();
+    virtual ~VersionGroup();
 
 public:
     inline PBX::GroupItem::shared_ptr const &currentVersion() const

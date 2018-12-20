@@ -20,6 +20,7 @@ public:
 
 public:
     ResourcesBuildPhase();
+    virtual ~ResourcesBuildPhase();
 
 public:
     static inline char const *Isa()

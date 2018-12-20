@@ -18,7 +18,7 @@ namespace lsRegisterURL {
 class Driver : public builtin::Driver {
 public:
     Driver();
-    ~Driver();
+    virtual ~Driver();
 
 public:
     virtual std::string name();

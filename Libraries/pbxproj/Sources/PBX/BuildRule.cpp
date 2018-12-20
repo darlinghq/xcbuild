@@ -22,6 +22,11 @@ BuildRule::BuildRule() :
 {
 }
 
+BuildRule::
+~BuildRule()
+{
+}
+
 bool BuildRule::
 parse(Context &context, plist::Dictionary const *dict, std::unordered_set<std::string> *seen, bool check)
 {

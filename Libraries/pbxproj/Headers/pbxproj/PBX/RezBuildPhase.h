@@ -20,6 +20,7 @@ public:
 
 public:
     RezBuildPhase();
+    virtual ~RezBuildPhase();
 
 public:
     static inline char const *Isa()

@@ -26,7 +26,7 @@ private:
 
 public:
     BuildFile();
-    ~BuildFile();
+    virtual ~BuildFile();
 
 public:
     inline GroupItem::shared_ptr const &fileRef() const

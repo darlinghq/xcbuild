@@ -20,6 +20,7 @@ public:
 
 public:
     VariantGroup();
+    virtual ~VariantGroup();
 
 public:
     static inline char const *Isa()

@@ -20,6 +20,7 @@ public:
 
 public:
     FrameworksBuildPhase();
+    virtual ~FrameworksBuildPhase();
 
 public:
     static inline char const *Isa()

@@ -23,6 +23,11 @@ TargetDependency() :
 {
 }
 
+TargetDependency::
+~TargetDependency()
+{
+}
+
 bool TargetDependency::
 parse(Context &context, plist::Dictionary const *dict, std::unordered_set<std::string> *seen, bool check)
 {

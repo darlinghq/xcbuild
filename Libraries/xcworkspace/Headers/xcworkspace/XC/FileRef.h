@@ -17,6 +17,7 @@ namespace xcworkspace { namespace XC {
 class FileRef : public GroupItem {
 public:
     FileRef();
+    virtual ~FileRef();
 };
 
 } }

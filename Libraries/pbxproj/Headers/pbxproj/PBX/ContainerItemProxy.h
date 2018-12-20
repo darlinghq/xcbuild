@@ -26,6 +26,7 @@ private:
 
 public:
     ContainerItemProxy();
+    virtual ~ContainerItemProxy();
 
 public:
     inline FileReference::shared_ptr const &containerPortal() const

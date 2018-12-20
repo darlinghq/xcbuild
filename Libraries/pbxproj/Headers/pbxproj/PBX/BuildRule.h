@@ -29,6 +29,7 @@ private:
 
 public:
     BuildRule();
+    virtual ~BuildRule();
 
 public:
     inline std::string const &compilerSpec() const

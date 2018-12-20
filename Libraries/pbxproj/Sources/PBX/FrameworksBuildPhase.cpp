@@ -16,3 +16,8 @@ FrameworksBuildPhase() :
     BuildPhase(Isa(), Type::Frameworks)
 {
 }
+
+FrameworksBuildPhase::
+~FrameworksBuildPhase()
+{
+}

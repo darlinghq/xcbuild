@@ -16,3 +16,8 @@ RezBuildPhase() :
     BuildPhase(Isa(), Type::Rez)
 {
 }
+
+RezBuildPhase::
+~RezBuildPhase()
+{
+}

@@ -16,3 +16,8 @@ SourcesBuildPhase() :
     BuildPhase(Isa(), Type::Sources)
 {
 }
+
+SourcesBuildPhase::
+~SourcesBuildPhase()
+{
+}

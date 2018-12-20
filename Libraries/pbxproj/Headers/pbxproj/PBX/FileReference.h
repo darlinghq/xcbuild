@@ -57,6 +57,7 @@ private:
 
 public:
     FileReference();
+    virtual ~FileReference();
 
 public:
     inline std::string const &lastKnownFileType() const

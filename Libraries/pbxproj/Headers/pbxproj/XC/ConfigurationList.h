@@ -25,6 +25,7 @@ private:
 
 public:
     ConfigurationList();
+    virtual ~ConfigurationList();
 
 public:
     inline BuildConfiguration::vector const &buildConfigurations() const

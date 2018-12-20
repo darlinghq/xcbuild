@@ -67,6 +67,7 @@ private:
 
 public:
     Project();
+    virtual ~Project();
 
 public:
     static shared_ptr Open(libutil::Filesystem const *filesystem, std::string const &path);

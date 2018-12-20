@@ -30,6 +30,7 @@ private:
 
 public:
     TargetDependency();
+    virtual ~TargetDependency();
 
 public:
     inline std::string const &name() const

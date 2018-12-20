@@ -18,7 +18,7 @@ namespace copyTiff {
 class Driver : public builtin::Driver {
 public:
     Driver();
-    ~Driver();
+    virtual ~Driver();
 
 public:
     virtual std::string name();

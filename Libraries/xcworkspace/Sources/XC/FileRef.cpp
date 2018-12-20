@@ -16,3 +16,8 @@ FileRef() :
     GroupItem(Type::FileRef)
 {
 }
+
+FileRef::
+~FileRef()
+{
+}

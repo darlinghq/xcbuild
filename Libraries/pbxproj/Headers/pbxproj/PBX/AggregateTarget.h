@@ -23,6 +23,7 @@ private:
 
 public:
     AggregateTarget();
+    virtual ~AggregateTarget();
 
 public:
     inline std::string const &productName() const

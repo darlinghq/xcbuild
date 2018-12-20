@@ -24,6 +24,7 @@ private:
 
 public:
     AppleScriptBuildPhase();
+    virtual ~AppleScriptBuildPhase();
 
 public:
     inline std::string const &contextName() const

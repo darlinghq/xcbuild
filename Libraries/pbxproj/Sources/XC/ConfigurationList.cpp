@@ -27,6 +27,11 @@ ConfigurationList() :
 {
 }
 
+ConfigurationList::
+~ConfigurationList()
+{
+}
+
 bool ConfigurationList::
 parse(Context &context, plist::Dictionary const *dict, std::unordered_set<std::string> *seen, bool check)
 {

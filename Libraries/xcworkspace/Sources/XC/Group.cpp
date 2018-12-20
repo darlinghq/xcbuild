@@ -21,6 +21,11 @@ Group() :
 {
 }
 
+Group::
+~Group()
+{
+}
+
 bool Group::
 parse(plist::Dictionary const *dict)
 {

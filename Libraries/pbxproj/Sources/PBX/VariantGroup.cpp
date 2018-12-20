@@ -16,3 +16,8 @@ VariantGroup() :
     BaseGroup(Isa(), GroupItem::Type::VariantGroup)
 {
 }
+
+VariantGroup::
+~VariantGroup()
+{
+}

@@ -26,6 +26,7 @@ private:
 
 public:
     LegacyTarget();
+    virtual ~LegacyTarget();
 
 public:
     inline std::string const &buildToolPath() const

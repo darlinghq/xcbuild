@@ -24,6 +24,7 @@ private:
 
 public:
     Group();
+    virtual ~Group();
 
 public:
     inline uint32_t indentWidth() const

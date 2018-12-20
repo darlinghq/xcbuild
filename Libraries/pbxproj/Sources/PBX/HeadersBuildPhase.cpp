@@ -16,3 +16,8 @@ HeadersBuildPhase() :
     BuildPhase(Isa(), Type::Headers)
 {
 }
+
+HeadersBuildPhase::
+~HeadersBuildPhase()
+{
+}

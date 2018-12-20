@@ -26,6 +26,7 @@ private:
 
 public:
     ReferenceProxy();
+    virtual ~ReferenceProxy();
 
 public:
     inline std::string const &fileType() const

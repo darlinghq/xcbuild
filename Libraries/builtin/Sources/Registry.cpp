@@ -66,5 +66,5 @@ Default()
         std::make_shared<builtin::productPackagingUtility::Driver>(),
         std::make_shared<builtin::validationUtility::Driver>(),
         std::make_shared<builtin::embeddedBinaryValidationUtility::Driver>(),
-    });
+        });;
 }
